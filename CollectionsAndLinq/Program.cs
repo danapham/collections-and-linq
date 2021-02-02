@@ -95,7 +95,60 @@ namespace CollectionsAndLinq
             var soupDefinitions = complicatedDictionary["Soup"];
             soupDefinitions.Add("This is a definition of soup");
 
+            complicatedDictionary.Add("Arity", new List<string> { "A definition of arity" });
 
+            foreach (var (word, definitions) in complicatedDictionary)
+            {
+                Console.WriteLine(word);
+                foreach (var definition in definitions)
+                {
+                    Console.WriteLine($"\t{definition}");
+                }
+            }
+
+            //Hashset<T>
+            //Really fast retrieval, no keys
+            //enforces uniqueness, but no errors
+            //Good for: looping
+            //Good for: when you only want at most one copy of a thing, deduplication
+
+            var unique = new HashSet<string>(); // most collection constructors take in collections and convert them
+
+            unique.Add("Dana"); //only this one does something
+            unique.Add("Dana");
+            unique.Add("Dana");
+            unique.Add("Dana");
+            unique.Add("Dana");
+
+            unique.Remove("Dana");
+
+            //Queue<T>
+            //FIFO
+            var queue = new Queue<int>();
+            queue.Enqueue(5);
+            queue.Enqueue(8);
+            queue.Enqueue(12);
+            queue.Enqueue(3);
+            queue.Enqueue(1);
+
+            while (queue.Count > 0)
+            {
+                Console.WriteLine($"currently dequeuing : {queue.Dequeue()}");
+            }
+
+            //Stack<T>
+            //LIFO
+            var stack = new Stack<int>();
+            stack.Push(5);
+            stack.Push(8);
+            stack.Push(12);
+            stack.Push(3);
+            stack.Push(1);
+
+            while (queue.Count > 0)
+            {
+                Console.WriteLine($"currently dequeuing : {stack.Pop()}");
+            }
 
             var a1 = new A<int>();
             var a2 = new A<string>();
