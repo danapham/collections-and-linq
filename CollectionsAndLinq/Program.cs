@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using CollectionsAndLinq.LinqExamples;
 
 namespace CollectionsAndLinq
 {
@@ -155,6 +156,9 @@ namespace CollectionsAndLinq
 
             a1.DoStuff(123);
             a2.DoStuff("Other stuff");
+
+            var examples = new Examples();
+            examples.Run();
         }
     }
 
